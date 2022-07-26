@@ -1,0 +1,28 @@
+{
+  "name": "youtube-application",
+  "version": "1.0.0",
+  "description": "An Unoffical Youtube Application Using Electron",
+  "main": "scripts/electron-prod.js",
+  "scripts": {
+    "start": "npm run electron:dev",
+    "start:prod": "npm run electron",
+    "electron:prod": "electron ./scripts/electron-prod.js",
+    "electron:dev": "electron ./scripts/electron-dev.js",
+    "package-all": "electron-packager . %npm_package_name%-%npm_package_version% --icon=./assets/icons/youtube-icon.png --overwrite --all --arch=all --out=release-builds",
+    "package-win": "electron-packager . %npm_package_name%-%npm_package_version% --icon=./assets/icons/youtube-icon.png --overwrite --platform=win32 --arch=all --out=release-builds",
+    "package-linux": "electron-packager . %npm_package_name%-%npm_package_version% --icon=./assets/icons/youtube-icon.png --overwrite --platform=linux --arch=all --out=release-builds",
+    "package-osx": "electron-packager . %npm_package_name%-%npm_package_version% --icon=./assets/icons/youtube-icon.png --overwrite --platform=darwin --arch=all  --out=release-builds",
+    "package-mac": "electron-packager . %npm_package_name%-%npm_package_version% --icon=./assets/icons/youtube-icon.png --overwrite --platform=darwin --arch=x64 --out=release-builds"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "cross-var": "^1.1.0",
+    "electron": "^19.0.9",
+    "electron-packager": "^15.5.1"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.23.8",
+    "cross-fetch": "^3.1.5",
+    "ts-node": "^10.9.1"
+  }
+}
